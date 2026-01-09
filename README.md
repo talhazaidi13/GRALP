@@ -1,6 +1,8 @@
+(OFFICIAL DETALIED CODE IMPLEMENTATION WILL BE UPDATED SOON AFTER ACCEPTANCE.....)
+
 # GRALP: Generative Representation for Action Refinement and Latent Planning
 
-(OFFICIAL DETALIED CODE IMPLEMENTATION WILL BE UPDATED SOON AFTER ACCEPTANCE.....)
+
 
 
 This repository contains the official implementation of **GRALP**, a framework for **long-horizon offline robotic control** that balances **support preservation** and **controllability** through a principled architectural separation.
