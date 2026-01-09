@@ -9,14 +9,14 @@ This repository contains the official implementation of **GRALP**, a framework f
 
 GRALP confines generative modeling to **action execution** while performing **planning and value estimation directly in latent space**, enabling reliable long-horizon composition from fixed datasets without trajectory-level diffusion planning at inference time.
 
-This code accompanies the IJCAI submission:
+This code accompanies the paper submission:
 
 > **GRALP: Support-Preserving Latent Planning for Long-Horizon Offline Robotic Control**
 
 ---
 
-## Overview
-
+<!-- ## Overview
+  
 Offline robotic control must reason over long horizons while strictly avoiding out-of-distribution actions. GRALP addresses this challenge by decomposing control into two stages:
 
 1. **Latent Skill Learning**  
@@ -25,12 +25,12 @@ Offline robotic control must reason over long horizons while strictly avoiding o
 2. **Latent-Space Planning**  
    Conservative critics and a Transformer planner operate directly in latent space, enabling efficient long-horizon composition without diffusion sampling during planning.
 
-<!-- <p align="center">
+<p align="center">
   <img src="figures/gralp_methodology.png" width="90%">
-</p> -->
+</p>
 
 *Figure: GRALP architecture. Diffusion is used exclusively for action execution, while planning and value learning occur in latent space.*
-
+ 
 ---
 
 ## Key Contributions
@@ -45,7 +45,7 @@ Offline robotic control must reason over long horizons while strictly avoiding o
   GRALP achieves state-of-the-art average performance on long-horizon D4RL domains and high success rates on contact-rich RoboSuite manipulation using offline human demonstrations.
 
 ---
-
+-->
 ## Experimental Results
 
 ### D4RL Benchmark Summary
