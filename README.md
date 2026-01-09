@@ -25,9 +25,9 @@ Offline robotic control must reason over long horizons while strictly avoiding o
 2. **Latent-Space Planning**  
    Conservative critics and a Transformer planner operate directly in latent space, enabling efficient long-horizon composition without diffusion sampling during planning.
 
-<p align="center">
+<!-- <p align="center">
   <img src="figures/gralp_methodology.png" width="90%">
-</p>
+</p> -->
 
 *Figure: GRALP architecture. Diffusion is used exclusively for action execution, while planning and value learning occur in latent space.*
 
