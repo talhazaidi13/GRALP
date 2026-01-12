@@ -46,6 +46,17 @@ Offline robotic control must reason over long horizons while strictly avoiding o
 
 ---
 -->
+
+
+
+
+
+Hyperparameters
+
+This section summarizes the hyperparameters used in GRALP. Unless otherwise specified, all hyperparameters are held fixed across environments, with only task-dependent parameters (e.g., CQL strength, RTG targets, and skill horizons) tuned using standard validation protocols. Tables are organized by training stage and evaluation usage. All ablations and comparisons use the same hyperparameters as the full GRALP model unless stated otherwise.
+
+
+
 ## Experimental Results
 
 ### D4RL Benchmark Summary
