@@ -47,13 +47,83 @@ Offline robotic control must reason over long horizons while strictly avoiding o
 ---
 -->
 
-
-
-
-
-Hyperparameters
+**Hyperparameters**
 
 This section summarizes the hyperparameters used in GRALP. Unless otherwise specified, all hyperparameters are held fixed across environments, with only task-dependent parameters (e.g., CQL strength, RTG targets, and skill horizons) tuned using standard validation protocols. Tables are organized by training stage and evaluation usage. All ablations and comparisons use the same hyperparameters as the full GRALP model unless stated otherwise.
+
+
+**Stage 1: Latent Skill Model**
+
+Stage 1 trains the diffusion-based latent skill model described in Section III-B.
+
+| Parameter                               | Value                                           |
+| --------------------------------------- | ----------------------------------------------- |
+| Latent dimension $d_z$                  | 16                                              |
+| GRU hidden size                         | 256                                             |
+| Diffusion schedule                      | Linear                                          |
+| Batch size                              | 256                                             |
+| Learning rate (encoder, prior)          | $3 \times 10^{-4}$                              |
+| Learning rate (decoder)                 | $1 \times 10^{-4}$                              |
+| KL weight $\beta_{\text{KL}}$           | $5 \times 10^{-4} \rightarrow 4 \times 10^{-2}$ |
+| Z-Force weight $\lambda_{\text{force}}$ | 0.01                                            |
+| State dropout probability               | $0.7 \rightarrow 0.3$                           |
+| Optimizer                               | AdamW                                           |
+| Gradient clipping                       | 1.0                                             |
+
+
+**Stage 2: Planner and Critics**
+
+Stage 2 operates entirely in the pre-encoded latent space, training conservative critics and a Transformer-based planner as described in Section III-C.
+
+| Parameter                  | Value                     |
+| -------------------------- | ------------------------- |
+| Critic hidden width        | 256                       |
+| Expectile $\tau$           | 0.8                       |
+| CQL coefficient $\alpha$   | 0.5–5.0 (domain-specific) |
+| Planner learning rate      | $1 \times 10^{-4}$        |
+| Critic learning rate       | $3 \times 10^{-4}$        |
+| AWR temperature $\tau$     | 2.0                       |
+| Transformer layers / heads | 8 / 8                     |
+| Context length             | 12–16                     |
+| Batch size                 | 256                       |
+| Optimizer                  | AdamW                     |
+
+
+**Return-to-Go (RTG) Targets**
+
+For evaluation, GRALP conditions the planner on fixed return-to-go (RTG) targets, following standard practice in return-conditioned sequence models.
+
+| Environment | Normalized Target RTG |
+| ----------- | --------------------- |
+| Kitchen     | 3–4                   |
+| Antmaze     | 5                     |
+| Maze2D      | 2                     |
+| Locomotion  | 2–5                   |
+| Adroit      | 3–6                   |
+| Robosim     | 3                     |
+
+**Skill Horizons**
+
+The skill horizon $H$ determines the temporal abstraction level at which planning operates.
+
+| Environment | Horizon $H$ |
+| ----------- | ----------- |
+| Kitchen     | 12          |
+| Antmaze     | 8           |
+| Maze2D      | 12          |
+| Locomotion  | 12          |
+| Adroit      | 8           |
+| Robosim     | 8           |
+
+
+
+**Compute and Reproducibility**
+
+All experiments are conducted on NVIDIA RTX 3090 or A100 GPUs, using a single GPU per run. Training is fully offline and does not require environment interaction. For each task, GRALP is trained independently with fixed hyperparameters, and performance is evaluated using 10 random seeds, reporting mean ± standard deviation following the standard D4RL protocol.
+
+Evaluation is performed using deterministic latent planning and deterministic DDIM decoding ($\eta = 0$), ensuring consistent execution across runs. Each seed is evaluated using 25 rollouts, and normalized returns are computed using the environment-specific random and expert baselines provided by D4RL. Final results are reported from the training checkpoint with the highest validation return.
+
+To ensure reproducibility, all random number generators (PyTorch, NumPy, and environment seeds) are explicitly controlled, and all experiments are run with fixed training schedules and evaluation protocols. Training scripts, configuration files, and pretrained model checkpoints will be released upon publication.
 
 
 
