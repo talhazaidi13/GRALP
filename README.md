@@ -47,7 +47,25 @@ Offline robotic control must reason over long horizons while strictly avoiding o
 ---
 -->
 
-**Hyperparameters**
+
+## Model Architecture
+
+GRALP consists of four components: a trajectory encoder, a state-conditional latent prior, a diffusion-based action decoder, and a latent-space planner trained with conservative value estimation.
+
+**Trajectory Encoder and Prior**
+The encoder is a 2-layer GRU with hidden size 256. The final forward and backward hidden states are concatenated and passed through linear heads to predict: Mean: $\mu_\phi \in \mathbb{R}^{d_z}$ and Log-variance: $\log \sigma_\phi$. The state-conditional prior is implemented as a 2-layer MLP (width 256, ReLU activations).
+
+**Diffusion Action Decoder**
+The decoder models using a temporal U-Net with FiLM conditioning. At each diffusion step $k$, the network predicts the noise term $\hat{\epsilon}_\theta$ used in the diffusion loss (Eq. (6) in the main paper).
+
+**Latent Critics**
+We train two Q-functions $Q_1(s, z)$ and $Q_2(s, z)$, along with a value function $V(s)$. Each critic is implemented as a 3-layer MLP with: Width: 256 and Activations: ReLU
+
+**Transformer Planner**
+The planner predicts a Gaussian distribution over the next latent skil.  These are processed by a causal Transformer with: Layers: 8, Attention heads: 8, Embedding dimension: 256. 
+
+
+## Hyperparameters
 
 This section summarizes the hyperparameters used in GRALP. Unless otherwise specified, all hyperparameters are held fixed across environments, with only task-dependent parameters (e.g., CQL strength, RTG targets, and skill horizons) tuned using standard validation protocols. Tables are organized by training stage and evaluation usage. All ablations and comparisons use the same hyperparameters as the full GRALP model unless stated otherwise.
 
