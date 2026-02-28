@@ -531,11 +531,7 @@ class TransformerTrainer:
             # ---------- Context mask over valid tokens ----------
             if eval:
                 mask_ratio = torch.full((B, 1), 0.3, device=skills.device)
-            elif self.mask_mode == "adaptive":
-                mask_ratio = self.mask_ratio_low + 0.3 * torch.rand(B, 1, device=skills.device)
-            elif self.mask_mode == "fixed_05":
-                mask_ratio = torch.full((B, 1), self.mask_ratio_high, device=skills.device)
-            elif self.mask_mode == "none":
+            else:
                 mask_ratio = torch.zeros((B, 1), device=skills.device)
                 # mask_ratio = r.clamp(0.3, 0.7)
             rnd = torch.rand(B, K, device=skills.device)
