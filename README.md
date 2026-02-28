@@ -1,13 +1,64 @@
-**(OFFICIAL DETALIED CODE IMPLEMENTATION WILL BE UPDATED SOON AFTER ACCEPTANCE.....)**
+
 
 # GRALP: Generative Representation for Action Refinement and Latent Planning
 
+This repository contains the official implementation of **GRALP**. This repository contains a research implementation. The code is organized to reproduce the results described in the accompanying paper included in this repository.
 
+## Repository Structure
 
+- `datasets/` – data loading, preprocessing and normalization utilities for D4RL datasets
+- `models/` – neural network and diffusion model definitions
+- `training/` – training scripts for autoencoder, IQL and evaluation
+- `utils/` – helper modules for logging, video rendering and miscellaneous utilities
 
-This repository contains the official implementation of **GRALP**, a framework for **long-horizon offline robotic control** that balances **support preservation** and **controllability** through a principled architectural separation.
+## Requirements
 
-GRALP confines generative modeling to **action execution** while performing **planning and value estimation directly in latent space**, enabling reliable long-horizon composition from fixed datasets without trajectory-level diffusion planning at inference time.
+The codebase targets **Python 3.8+**. Install dependencies using the provided `requirements.txt`:
+
+```bash
+pip install -r requirements.txt
+```
+
+`mujoco-py` and 'robosim' requires the MuJoCo physics engine and an available OpenGL context. Please follow the [MuJoCo installation guide](https://github.com/openai/mujoco-py/) to set up the required libraries.
+ 
+
+## Quick Start
+
+1. **Clone the repository**
+
+```bash
+git clone <repository-url>
+cd GRALP
+```
+
+2. **Install dependencies**
+
+```bash
+pip install -r requirements.txt
+```
+
+3. **Run the training pipeline**
+
+The full pipeline consists of four stages: training the diffusion autoencoder, creating an encoded dataset for Planning, training the latent planning Transformer agent and finally evaluating the agent.
+
+Example for a HalfCheetah environment:
+
+```bash
+# Train the diffusion autoencoder
+python training/train_AE_main.py --env_name antmaze-medium-diverse-v2
+
+# Collect an encoded dataset
+python training/prepare_transformer_data.py --env_name antmaze-medium-diverse-v2
+
+# Train the IQL policy
+python training/train_transformer_main.py --env_name antmaze-medium-diverse-v2
+
+# Evaluate the trained agent
+python training/eval.py --env_name antmaze-medium-diverse-v2
+```
+
+Command line arguments in each script allow further customisation (batch sizes, seed values, number of timesteps, etc.). Refer to the source code for a full list of options.
+
 
 This code accompanies the paper submission:
 
@@ -30,20 +81,6 @@ Offline robotic control must reason over long horizons while strictly avoiding o
 </p>
 
 *Figure: GRALP architecture. Diffusion is used exclusively for action execution, while planning and value learning occur in latent space.*
- 
----
-
-## Key Contributions
-
-- **Support–Controllability Design**  
-  GRALP balances dataset support preservation with latent controllability through conservative planning and geometric regularization.
-
-- **Efficient Long-Horizon Planning**  
-  Planning is performed entirely in latent space using a Transformer and CEM, avoiding trajectory-level diffusion at inference.
-
-- **Strong Empirical Performance**  
-  GRALP achieves state-of-the-art average performance on long-horizon D4RL domains and high success rates on contact-rich RoboSuite manipulation using offline human demonstrations.
-
 ---
 -->
 
@@ -185,5 +222,13 @@ We additionally evaluate GRALP on RoboSuite manipulation tasks using offline tel
 
 ---
 
-## Repository Structure
+
+
+## Citation
+
+If you use this code in your research, please cite the accompanying paper:
+
+```
+
+```
 
