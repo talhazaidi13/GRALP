@@ -223,11 +223,11 @@ We additionally evaluate GRALP on RoboSuite manipulation tasks using offline tel
 <table align="center">
   <tr>
     <td align="center">
-      <img src="videos/maze.gif" alt="Maze" width="400"><br>
+      <img src="videos/maze.gif" alt="Maze" width="500"><br>
       <b>📹 Maze [Navigation]</b>
     </td>
     <td align="center">
-      <img src="videos/kitchen.gif" alt="Kitchen" width="400"><br>
+      <img src="videos/kitchen.gif" alt="Kitchen" width="300"><br>
       <b>📹 Kitchen [Sequential]</b>
     </td>
   </tr>
