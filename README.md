@@ -217,21 +217,34 @@ We additionally evaluate GRALP on RoboSuite manipulation tasks using offline tel
 </p>
 
 #### Videos
-- 📹 **Lift rollout:** `videos/robosuite_lift.mp4`
-- 📹 **Pick-and-Place rollout:** `videos/robosuite_pick_place.mp4`
 
 <table>
   <tr>
     <td align="center">
-      <img src="videos/lift.gif" alt="📹 Lift rollout" width="400"><br>
-      <b>Lift rollout</b>
+      <img src="videos/lift.gif" alt="Lift rollout" width="400"><br>
+      <b>📹 Lift rollout</b>
     </td>
     <td align="center">
-      <img src="videos/robo.gif" alt="📹 Pick-and-Place rollout" width="400"><br>
-      <b>Pick-and-Place rollout</b>
+      <img src="videos/robo.gif" alt="Pick-and-Place rollout" width="400"><br>
+      <b>📹 Pick-and-Place rollout</b>
     </td>
   </tr>
 </table>
+
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="videos/lift.gif" alt="Lift rollout" width="400"><br>
+      <b>📹 Lift rollout</b>
+    </td>
+    <td align="center">
+      <img src="videos/robo.gif" alt="Pick-and-Place rollout" width="400"><br>
+      <b>📹 Pick-and-Place rollout</b>
+    </td>
+  </tr>
+</table>
+
 
 
 
