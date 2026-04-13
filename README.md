@@ -4,6 +4,11 @@
 
 This repository contains the official implementation of **GRALP**. This repository contains a research implementation. The code is organized to reproduce the results described in the accompanying paper included in this repository.
 
+<div align="center">
+  <img src="videos/gralp.gif" alt="Gralp rollout" width="400"><br>
+  <b>📹 Gralp</b>
+</div>
+
 ## Repository Structure
 
 - `datasets/` – data loading, preprocessing and normalization utilities for D4RL datasets
