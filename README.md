@@ -5,7 +5,7 @@
 This repository contains the official implementation of **GRALP**. This repository contains a research implementation. The code is organized to reproduce the results described in the accompanying paper included in this repository.
 
 <div align="center">
-  <img src="videos/gralp.gif" alt="Gralp rollout" width="600"><br>
+  <img src="videos/gralp.gif" alt="Gralp rollout" width="900"><br>
   <b>📹 Gralp</b>
 </div>
 
