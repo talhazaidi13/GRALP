@@ -225,8 +225,8 @@ We additionally evaluate GRALP on RoboSuite manipulation tasks using offline tel
       <b>📹 Maze [Navigation] </b>
     </td>
     <td align="center">
-      <img src="videos/kithen.gif" alt="Pick-and-Place rollout" width="400"><br>
-      <b>📹 Kitchen [Sequential] rollout</b>
+      <img src="videos/kitchen.gif" alt="Pick-and-Place rollout" width="400"><br>
+      <b>📹 Kitchen [Sequential]</b>
     </td>
   </tr>
 </table>
@@ -254,7 +254,7 @@ We additionally evaluate GRALP on RoboSuite manipulation tasks using offline tel
     </td>
     <td align="center">
       <img src="videos/door.gif" alt="Pick-and-Place rollout" width="400"><br>
-      <b>📹 Door [Adroit] rollout</b>
+      <b>📹 Door [Adroit]</b>
     </td>
   </tr>
 </table>
