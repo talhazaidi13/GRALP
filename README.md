@@ -221,8 +221,8 @@ We additionally evaluate GRALP on RoboSuite manipulation tasks using offline tel
   <img src="figures/robosuite_pick_place.png" width="90%">
 </p> -->
 
-#### Videos
-Note: *Videos Renderring speed might varies due to third party anonymous gutub server. For better quality view, try to download the videos from Videos/ folder* 
+## Videos
+###  Note: *Videos Renderring speed might varies due to third party anonymous gutub server. For better quality view, try to download the videos from Videos/ folder* 
 <div align="center">
 
 <table align="center">
