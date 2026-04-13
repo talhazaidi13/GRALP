@@ -221,12 +221,12 @@ We additionally evaluate GRALP on RoboSuite manipulation tasks using offline tel
 <table>
   <tr>
     <td align="center">
-      <img src="videos/lift.gif" alt="Lift rollout" width="400"><br>
-      <b>📹 Lift rollout</b>
+      <img src="videos/maze.gif" alt="Lift rollout" width="400"><br>
+      <b>📹 Maze [Navigation] </b>
     </td>
     <td align="center">
-      <img src="videos/robo.gif" alt="Pick-and-Place rollout" width="400"><br>
-      <b>📹 Pick-and-Place rollout</b>
+      <img src="videos/kithen.gif" alt="Pick-and-Place rollout" width="400"><br>
+      <b>📹 Kitchen [Sequential] rollout</b>
     </td>
   </tr>
 </table>
@@ -246,6 +246,18 @@ We additionally evaluate GRALP on RoboSuite manipulation tasks using offline tel
 </table>
 
 
+<table>
+  <tr>
+    <td align="center">
+      <img src="videos/pen.gif" alt="Lift rollout" width="400"><br>
+      <b>📹 Pen Manipulation [Adroit] </b>
+    </td>
+    <td align="center">
+      <img src="videos/door.gif" alt="Pick-and-Place rollout" width="400"><br>
+      <b>📹 Door [Adroit] rollout</b>
+    </td>
+  </tr>
+</table>
 
 
 ## Citation
