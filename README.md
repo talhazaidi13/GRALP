@@ -208,31 +208,34 @@ We additionally evaluate GRALP on RoboSuite manipulation tasks using offline tel
 - **Success Rate:** 92.3% ± 3.4%
 - **10 seeds, 25 rollouts per seed**
 
-<p align="center">
+<!-- <p align="center">
   <img src="figures/robosuite_lift.png" width="90%">
 </p>
 
 <p align="center">
   <img src="figures/robosuite_pick_place.png" width="90%">
-</p>
+</p> -->
 
 #### Videos
 
-<table>
+<div align="center">
+
+<table align="center">
   <tr>
     <td align="center">
-      <img src="videos/maze.gif" alt="Lift rollout" width="400"><br>
-      <b>📹 Maze [Navigation] </b>
+      <img src="videos/maze.gif" alt="Maze" width="400"><br>
+      <b>📹 Maze [Navigation]</b>
     </td>
     <td align="center">
-      <img src="videos/kitchen.gif" alt="Pick-and-Place rollout" width="400"><br>
+      <img src="videos/kitchen.gif" alt="Kitchen" width="400"><br>
       <b>📹 Kitchen [Sequential]</b>
     </td>
   </tr>
 </table>
 
+<br>
 
-<table>
+<table align="center">
   <tr>
     <td align="center">
       <img src="videos/lift.gif" alt="Lift rollout" width="400"><br>
@@ -245,19 +248,22 @@ We additionally evaluate GRALP on RoboSuite manipulation tasks using offline tel
   </tr>
 </table>
 
+<br>
 
-<table>
+<table align="center">
   <tr>
     <td align="center">
-      <img src="videos/pen.gif" alt="Lift rollout" width="400"><br>
-      <b>📹 Pen Manipulation [Adroit] </b>
+      <img src="videos/pen.gif" alt="Pen Manipulation" width="400"><br>
+      <b>📹 Pen Manipulation [Adroit]</b>
     </td>
     <td align="center">
-      <img src="videos/door.gif" alt="Pick-and-Place rollout" width="400"><br>
+      <img src="videos/door.gif" alt="Door" width="400"><br>
       <b>📹 Door [Adroit]</b>
     </td>
   </tr>
 </table>
+
+</div>
 
 
 ## Citation
