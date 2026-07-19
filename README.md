@@ -1,6 +1,7 @@
 
 
 # GRALP: Generative Representation for Action Refinement and Latent Planning
+> **Accepted at the International Joint Conference on Artificial Intelligence (IJCAI 2026) – Robotics Track**
 
 This repository contains the official implementation of **GRALP**. This repository contains a research implementation. The code is organized to reproduce the results described in the accompanying paper included in this repository.
 
@@ -276,6 +277,12 @@ We additionally evaluate GRALP on RoboSuite manipulation tasks using offline tel
 If you use this code in your research, please cite the accompanying paper:
 
 ```
+@inproceedings{zaidi2026gralp,
+  title={GRALP: Generative Representation for Action Refinement and Latent Planning},
+  author={Zaidi, Talha and Munir, Arslan and Abbas, Sardar Ali},
+  booktitle={Proceedings of the International Joint Conference on Artificial Intelligence (IJCAI)},
+  year={2026}
+}
 
 ```
 
